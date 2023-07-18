@@ -59,7 +59,7 @@ const posts = [
 const container = document.querySelector(".posts-list");
 const singlePost = "";
 
-posts.forEach((singlePost) => {
+posts.forEach((singlePost, i) => {
   container.innerHTML += `<div class="post">
                           <div class="post__header">
                               <div class="post-meta">                    
@@ -90,9 +90,13 @@ posts.forEach((singlePost) => {
                               </div> 
                           </div>            
                         </div>`
+console.log(i)                      
 });
 
-const likesButton = document.querySelectorAll(".like-button");
+const likesButton = document.querySelectorAll(`[data-postid="${id}"]`);
+
 likesButton.addEventListener("click", function(){
-  
+  const likesIcon = document.querySelector(".like-button");
+  likesIcon.classList.toggle("like-button--liked");
+  console.log("Cliccato")
 });

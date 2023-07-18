@@ -111,6 +111,10 @@ h1 {
     color: #404040;
 }
 
+.liked-button{
+  color: rgb(79, 79, 181);
+}
+
 .like-button:hover {
   cursor: pointer;
 }
