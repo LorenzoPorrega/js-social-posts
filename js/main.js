@@ -58,6 +58,7 @@ const posts = [
 
 const container = document.querySelector(".posts-list");
 const singlePost = "";
+const postId = [];
 
 posts.forEach((singlePost, i) => {
   container.innerHTML += `<div class="post">
@@ -79,7 +80,7 @@ posts.forEach((singlePost, i) => {
                           <div class="post__footer">
                               <div class="likes js-likes">
                                   <div class="likes__cta">
-                                      <a class="like-button  js-like-button" data-postid="${singlePost.id}">
+                                      <a class="like-button  js-like-button" data-postid="${i}">
                                           <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                                           <span class="like-button__label">Mi Piace</span>
                                       </a>
@@ -90,10 +91,11 @@ posts.forEach((singlePost, i) => {
                               </div> 
                           </div>            
                         </div>`
-console.log(i)                      
+postId.push(i);                     
 });
 
-const likesButton = document.querySelectorAll(`[data-postid="${id}"]`);
+console.log(postId)
+const likesButton = document.querySelector(`[data-postid="${postId[0]}"]`);
 
 likesButton.addEventListener("click", function(){
   const likesIcon = document.querySelector(".like-button");
